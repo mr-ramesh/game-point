@@ -9,6 +9,9 @@ module.exports = {
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
     app.use(cookieParser());
+    app.get('/',function(req,res) {
+      res.sendFile('index.html', { root: __dirname });
+    });
     this.startServer();
     return this;
   },
