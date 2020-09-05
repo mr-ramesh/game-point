@@ -22,8 +22,6 @@
 
 Game Point simple rest end point provider app with simple json authentication app. It may developed more in future.
 
-Firebase based node js project.
-
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 ### Prerequisites
