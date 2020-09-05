@@ -1,8 +1,3 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="" alt="Project logo"></a>
-</p>
-
 <h3 align="center">Game Point</h3>
 
 <p align="center"> 
