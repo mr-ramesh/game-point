@@ -1,0 +1,35 @@
+### API to get current server time.
+GET http://localhost:666/now
+
+### API to register new user
+POST http://localhost:666/register 
+Content-Type: application/json
+
+{
+    "name": "ramesh",
+    "pass": "ram123"
+}
+
+### API to login the user
+POST http://localhost:666/login
+Content-Type: application/json
+
+{
+    "name": "ramesh",
+    "pass": "ram123"
+}
+
+### API to get the current info of the logged in user
+GET http://localhost:666/me
+
+### API to play the game
+POST http://localhost:666/game/play
+
+### API to claim the bonus from the game
+POST http://localhost:666/game/claim_bonus
+
+### API to get the leader details
+GET http://localhost:666/leaderboard
+
+
+

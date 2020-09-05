@@ -1,0 +1,96 @@
+let today = new Date();
+let yesterday = new Date(today.getTime() - 1000 * 60 * 60 * 24);
+let lasthour = new Date(today.getTime() - 1000 * 60 * 60);
+
+module.exports = Object.freeze({
+  postiveUser: {
+    name: "ramesh",
+    registeredDate: yesterday,
+    lastPlayedHour: 19,
+    aviablePlays: 5,
+    totalPoints: 654,
+    lastClaimedDate: yesterday,
+  },
+  negativeUser: {
+    name: "ramesh",
+    registeredDate: yesterday,
+    lastPlayedHour: 19,
+    aviablePlays: 0,
+    totalPoints: 3432,
+    lastClaimedDate: today,
+  },
+  allUsers: [
+    {
+      name: "ramesh",
+      registeredDate: yesterday,
+      lastPlayedHour: 19,
+      aviablePlays: 1,
+      totalPoints: 56,
+      lastClaimedDate: today,
+    },
+    {
+      name: "murugan",
+      registeredDate: yesterday,
+      lastPlayedHour: 12,
+      aviablePlays: 6,
+      totalPoints: 654,
+      lastClaimedDate: lasthour,
+    },
+    {
+      name: "shanthi",
+      registeredDate: yesterday,
+      lastPlayedHour: 2,
+      aviablePlays: 1,
+      totalPoints: 6543,
+      lastClaimedDate: today,
+    },
+    {
+      name: "raja",
+      registeredDate: yesterday,
+      lastPlayedHour: 5,
+      aviablePlays: 5,
+      totalPoints: 1654,
+      lastClaimedDate: today,
+    },
+    {
+      name: "sangee",
+      registeredDate: yesterday,
+      lastPlayedHour: 1,
+      aviablePlays: 0,
+      totalPoints: 6546,
+      lastClaimedDate: lasthour,
+    },
+    {
+      name: "potti",
+      registeredDate: yesterday,
+      lastPlayedHour: 19,
+      aviablePlays: 0,
+      totalPoints: 109864,
+      lastClaimedDate: today,
+    },
+    {
+      name: "sindhu",
+      registeredDate: yesterday,
+      lastPlayedHour: 19,
+      aviablePlays: 3,
+      totalPoints: 12,
+      lastClaimedDate: today,
+    },
+    {
+      name: "udaya",
+      registeredDate: yesterday,
+      lastPlayedHour: 19,
+      aviablePlays: 1,
+      totalPoints: 3232,
+      lastClaimedDate: today,
+    },
+    {
+      name: "yogesh",
+      registeredDate: yesterday,
+      lastPlayedHour: 0,
+      aviablePlays: 6,
+      totalPoints: 0,
+      lastClaimedDate: today,
+    },
+  ],
+});
