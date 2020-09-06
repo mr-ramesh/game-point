@@ -7,7 +7,7 @@ const repository = new SecurityRepository();
 const UserService = require("../service/UserService");
 
 router.post("/register", async (req, res) => {
-  let { name, pass } = req.body;  
+  let { name, pass } = req.body;
   await repository
     .register(name, pass)
     .then((resp) => {
@@ -28,7 +28,9 @@ router.post("/login", async (req, res) => {
     .login(name, pass)
     .then((resp) => {
       if (!resp) {
-        res.status(200).json({ message: "User not exist. Please register to continue" });
+        res
+          .status(200)
+          .json({ message: "User not exist. Please register to continue" });
       } else {
         res.cookie("AuthToken", resp);
         res.status(200).json({ message: "User Loggedin Successfully!" });
@@ -48,25 +50,29 @@ router.post("/login", async (req, res) => {
 });
 
 router.get("/me", (req, res, next) => {
-  UserService.getUserDetails(req.user.name)
-    .then((resp) => {
-      let points = resp.totalPoints ? resp.totalPoints : 0;
-      let avilablePlays = resp.aviablePlays ? resp.aviablePlays : 6;
-      let data = {
-        name: resp.name,
-        totalPoints: points,
-        avilablePlayforThisHour: avilablePlays,
-      };
-      res.status(200).json(data);
-    })
-    .catch((err) => {
-      console.log("Err: ", err);
-      res
-        .status(500)
-        .json(
-          "Sorry, We're facing trouble at this moment. Please try again later !"
-        );
-    });
+  if (req.user && req.user.name) {
+    UserService.getUserDetails(req.user.name)
+      .then((resp) => {
+        let points = resp.totalPoints ? resp.totalPoints : 0;
+        let avilablePlays = resp.aviablePlays ? resp.aviablePlays : 6;
+        let data = {
+          name: resp.name,
+          totalPoints: points,
+          avilablePlayforThisHour: avilablePlays,
+        };
+        res.status(200).json(data);
+      })
+      .catch((err) => {
+        console.log("Err: ", err);
+        res
+          .status(500)
+          .json(
+            "Sorry, We're facing trouble at this moment. Please try again later !"
+          );
+      });
+  } else {
+    res.status(401).json({ message: "Please login to continue!" });
+  }
 });
 
 module.exports = router;

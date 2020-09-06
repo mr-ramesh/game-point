@@ -16,11 +16,11 @@ exports.tokenValidator = async function (req, res, next) {
 exports.jwtFilter = async function (req, res, next) {
   console.log("[Interceptor] [jwtFilter] processing...");
   if (req.user) {
+    console.log("req user ... ", req.user);
     return next();
   } else {
-    console.log("[Interceptor] [jwtFilter] processing...");
     res.status(403).json({
-      message: "You're session has been expired. Please login to continue!",
+      message: "Please login to continue!",
     });
   }
 };
