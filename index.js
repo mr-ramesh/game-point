@@ -1,3 +1,5 @@
+const serverless = require('serverless-http');
+
 const fs = require('fs');
 const ini = require('ini');
 
@@ -23,3 +25,5 @@ server.addRoutes(null, commonRoutes);
 server.addRoutes(null, interceptor.jwtFilter);
 server.addRoutes("/game", gameRoutes);
 server.addRoutes(null, exceptionHandler.handler);
+
+module.exports.handler = serverless(server.app);
