@@ -29,8 +29,7 @@ Please follow the instruction to getting started in your local
 
 1) Download or Clone the project into local
 2) Navigate to the app root folder and do `npm install` to install the require dependencies.
-3) Run `npm run devStart` to start the app with nodemon in dev mode
-4) Run `npm run start` to start the app with normal mode in dev mode
+3) Run `npm start` to start the app with nodemon in dev mode
 5) Test the app by calling the http://localhost:666/now to get the current timestamp from server 
 
 Note: ( You can configure your db server and port number in environment config)
